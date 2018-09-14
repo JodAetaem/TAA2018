@@ -30,7 +30,6 @@ public class Sport {
 		this.id = id;
 	}
 	
-	@Column( name = "label", nullable= false, length = 50 )
 	public String getLabel() {
 		return label;
 	}

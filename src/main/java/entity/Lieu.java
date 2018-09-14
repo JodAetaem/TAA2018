@@ -30,7 +30,7 @@ public class Lieu {
 
 	@ManyToMany
 	@JoinTable(name="lieu_sport",
-			   joinColumns= @JoinColumn(name = "lieu_id"),
+			   joinColumns= {@JoinColumn(name = "code_postal_id"),@JoinColumn(name = "label_id"),},
 			   inverseJoinColumns=@JoinColumn(name="sport_id"))
 	public Set<Sport> getSports() {
 		return sports;
