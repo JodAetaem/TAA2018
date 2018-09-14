@@ -1,5 +1,6 @@
 package entity;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -16,7 +17,7 @@ public class Region {
 	private long code;
 	private String name;
 	
-	private Set<Lieu> lieux;
+	private List<Lieu> lieux;
 	private Set<User> users;
 
 	public long getId() {
@@ -43,12 +44,12 @@ public class Region {
 		this.name = name;
 	}
 
-	@OneToMany
-	public Set<Lieu> getLieux() {
+	@OneToMany(mappedBy="region")
+	public List<Lieu> getLieux() {
 		return lieux;
 	}
 
-	public void setLieux(Set<Lieu> lieux) {
+	public void setLieux(List<Lieu> lieux) {
 		this.lieux = lieux;
 	}
 
