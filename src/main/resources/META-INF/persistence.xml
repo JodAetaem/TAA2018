@@ -23,7 +23,7 @@
 <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
 <property name="hibernate.connection.username" value="sa"/>
 <property name="hibernate.connection.password" value=""/>
-<property name="hibernate.connection.url" value="jdbc:hsqldb:hsql://localhost/"/>
+<property name="hibernate.connection.url" value="jdbc:hsqldb:hsql://localhost:8050/"/>
 <property name="hibernate.max_fetch_depth" value="3"/>
 <!-- cache configuration -->
 <!-- <property name="hibernate.ejb.classcache.org.hibernate.ejb.test.Item" value="read-write"/>-->
