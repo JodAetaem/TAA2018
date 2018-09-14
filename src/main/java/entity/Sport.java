@@ -1,9 +1,12 @@
 package entity;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /**
  * 
@@ -15,6 +18,8 @@ public class Sport {
 	
 	private long id;
 	private String label;
+	private Set<User> users;
+	private Set<Lieu> lieus;
 	
 	@Id
 	@GeneratedValue
@@ -29,8 +34,29 @@ public class Sport {
 	public String getLabel() {
 		return label;
 	}
+	
 	public void setLabel(String label) {
 		this.label = label;
+	}
+	
+	@ManyToMany(mappedBy="sports")
+	public Set<User> getUsers() {
+		return users;
+	}
+	
+	
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+	
+	@ManyToMany(mappedBy="sports")
+	public Set<Lieu> getLieus() {
+		return lieus;
+	}
+	
+	
+	public void setLieus(Set<Lieu> lieus) {
+		this.lieus = lieus;
 	}
 	
 	
