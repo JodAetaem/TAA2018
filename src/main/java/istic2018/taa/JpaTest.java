@@ -5,15 +5,18 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import entity.Sport;
+import repository.ISportDAO;
+import repository.SportDAO;
+
 public class JpaTest {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		EntityManagerFactory factory = Persistence
-				.createEntityManagerFactory("dev");
-		EntityManager manager = factory.createEntityManager();
+	
+		EntityManager manager = EntityManagerHelper.getEntityManager();
 
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
@@ -26,8 +29,12 @@ public class JpaTest {
 		}
 		tx.commit();
 		
+	
+		Sport sport = new Sport();
+		sport.setLabel("sport1");
+		ISportDAO<Sport,Long> sportDAO = new SportDAO(manager);
+		sportDAO. create(sport);
 		manager.close();
-		factory.close();
 	}
 
 }
