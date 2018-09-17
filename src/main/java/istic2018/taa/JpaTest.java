@@ -6,6 +6,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import entity.Sport;
+import entity.Sportexterieur;
+import entity.Sportinterieur;
 import repository.ISportDAO;
 import repository.SportDAO;
 
@@ -30,10 +32,15 @@ public class JpaTest {
 		tx.commit();
 		
 	
-		Sport sport = new Sport();
-		sport.setLabel("sport1");
+		Sportinterieur sporti = new Sportinterieur();
+		sporti.setLabel("sportinterieur");
 		ISportDAO<Sport,Long> sportDAO = new SportDAO(manager);
-		sportDAO. create(sport);
+		sportDAO. create(sporti);
+		
+		Sportexterieur sporte = new Sportexterieur();
+		sporte.setLabel("sportexterieur");
+		ISportDAO<Sport,Long> sportDAO2 = new SportDAO(manager);
+		sportDAO2. create(sporte);
 		manager.close();
 	}
 
