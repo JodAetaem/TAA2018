@@ -8,6 +8,8 @@ import javax.persistence.Persistence;
 import entity.Region;
 import entity.Sport;
 import repository.IRegionDAO;
+import entity.Sportexterieur;
+import entity.Sportinterieur;
 import repository.ISportDAO;
 import repository.RegionDAO;
 import repository.SportDAO;
@@ -37,6 +39,14 @@ public class JpaTest {
 		sport.setLabel("sport1");
 		ISportDAO<Sport,Long> sportDAO = new SportDAO(manager,Sport.class);
 		sportDAO. create(sport);
+		Sportinterieur sporti = new Sportinterieur();
+		sporti.setLabel("sportinterieur");
+		sportDAO. create(sporti);
+		
+		Sportexterieur sporte = new Sportexterieur();
+		sporte.setLabel("sportexterieur");
+		ISportDAO<Sport,Long> sportDAO2 = new SportDAO(manager,Sport.class);
+		sportDAO2. create(sporte);
 		manager.close();
 		
 		Region region = new Region();
