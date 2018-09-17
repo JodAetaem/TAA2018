@@ -14,7 +14,7 @@ import javax.persistence.ManyToMany;
  *
  */
 @Entity
-public class Sport {
+public class Sport  {
 	
 	private long id;
 	private String label;
