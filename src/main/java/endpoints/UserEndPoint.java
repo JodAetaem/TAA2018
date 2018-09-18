@@ -31,10 +31,11 @@ public class UserEndPoint {
 		IUserDAO<User,Long> userDAO = new UserDAO(manager,User.class);
 
 		u = userDAO.findByPrimaryKey(id);
+		logger.warning("coucou!!\n\n");
 
 		return u;
 	}
-
+/*
 	@GET
 	@Path("{pseudo}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -43,8 +44,8 @@ public class UserEndPoint {
 		IUserDAO<User,Long> userDAO = new UserDAO(manager,User.class);
 
 		u = userDAO.findByPseudo(pseudo);
-
+		logger.warning("coucou!!\n\n");
 		return u;
-	}
+	}*/
 
 }

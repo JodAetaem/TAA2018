@@ -29,6 +29,7 @@ public class RestApplication extends Application {
 		// clazzes.add(Sport.class);
 		clazzes.add(io.swagger.jaxrs.listing.ApiListingResource.class);
 		clazzes.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);
+		clazzes.add(UserEndPoint.class);
 		clazzes.add(SwaggerRessource.class);
 
 		return clazzes;
