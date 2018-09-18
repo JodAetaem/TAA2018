@@ -1,9 +1,7 @@
 package istic2018.taa;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 
 import org.apache.log4j.Logger;
 import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
@@ -13,11 +11,11 @@ import entity.Lieu;
 import entity.LieuId;
 import entity.Region;
 import entity.Sport;
-import repository.ILieuDAO;
-import repository.IRegionDAO;
 import entity.Sportexterieur;
 import entity.Sportinterieur;
 import io.undertow.Undertow;
+import repository.ILieuDAO;
+import repository.IRegionDAO;
 import repository.ISportDAO;
 import repository.LieuDAO;
 import repository.RegionDAO;
