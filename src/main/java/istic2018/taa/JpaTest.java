@@ -1,25 +1,18 @@
 package istic2018.taa;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-
 import org.apache.log4j.Logger;
 import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
 
 import endpoints.RestApplication;
-import entity.Lieu;
-import entity.LieuId;
 import entity.Region;
 import entity.Sport;
-import repository.ILieuDAO;
 import repository.IRegionDAO;
 import entity.Sportexterieur;
 import entity.Sportinterieur;
 import io.undertow.Undertow;
 import repository.ISportDAO;
-import repository.LieuDAO;
 import repository.RegionDAO;
 import repository.SportDAO;
 
@@ -66,7 +59,6 @@ public class JpaTest {
 		IRegionDAO<Region, Long> regionDao = new RegionDAO(manager, Region.class);
 		regionDao.create(region);
 		
-    
 		manager.close();
 		
 		   UndertowJaxrsServer ut = new UndertowJaxrsServer();
