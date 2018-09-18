@@ -21,31 +21,27 @@ public class UserEndPoint {
 	private static final Logger logger = Logger.getLogger(UserEndPoint.class.getName());
 	
 	EntityManager manager = EntityManagerHelper.getEntityManager();
-	EntityTransaction tx = manager.getTransaction();
 
 	@GET
-	@Path("{id}")
+	@Path("/id/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public User getUserById(@PathParam("id") long id) {
 		User u = new User();
 		IUserDAO<User,Long> userDAO = new UserDAO(manager,User.class);
 
 		u = userDAO.findByPrimaryKey(id);
-		logger.warning("coucou!!\n\n");
-
 		return u;
 	}
-/*
+
 	@GET
-	@Path("{pseudo}")
+	@Path("/pseudo/{pseudo}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public User getUserByPseudo(@PathParam("pseudo") String pseudo) {
 		User u = new User();
 		IUserDAO<User,Long> userDAO = new UserDAO(manager,User.class);
 
 		u = userDAO.findByPseudo(pseudo);
-		logger.warning("coucou!!\n\n");
 		return u;
-	}*/
+	}
 
 }

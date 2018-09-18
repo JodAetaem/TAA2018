@@ -1,7 +1,9 @@
 package repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.apache.log4j.Logger;
@@ -20,12 +22,15 @@ public class UserDAO extends GenericDAO<User, Long> implements IUserDAO<User, Lo
 
 	public User findByPseudo(String pseudo) {
 		try {
-		 TypedQuery<User> query = em.createQuery(
-				 "SELECT c FROM USER c WHERE c.PSEUDO = :pseudo", User.class);
-		return query.setParameter("pseudo", pseudo).getSingleResult();
+		 Query query = em.createQuery(
+				 "SELECT u FROM User u WHERE u.pseudo = :pseudo");
+		return (User) query.setParameter("pseudo", pseudo).getSingleResult();
 		}
 		catch(NonUniqueResultException e){
 			logger.error(e);
+		}
+		catch(NoResultException nre) {
+			logger.error(nre);
 		}
 		return null;
 	}
