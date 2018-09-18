@@ -5,7 +5,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.apache.log4j.Logger;
 import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
+
+import endpoints.RestApplication;
 import entity.Lieu;
 import entity.LieuId;
 import entity.Region;
@@ -14,12 +17,16 @@ import repository.ILieuDAO;
 import repository.IRegionDAO;
 import entity.Sportexterieur;
 import entity.Sportinterieur;
+import io.undertow.Undertow;
 import repository.ISportDAO;
 import repository.LieuDAO;
 import repository.RegionDAO;
 import repository.SportDAO;
 
 public class JpaTest {
+	
+    private static final Logger logger = Logger.getLogger(RestApplication.class.getName());
+
 
 	/**
 	 * @param args
@@ -70,6 +77,16 @@ public class JpaTest {
 		manager.close();
 		
 		   UndertowJaxrsServer ut = new UndertowJaxrsServer();
+		   RestApplication app = new RestApplication();
+		   ut.deploy(app);
+
+	        ut.start(
+	                Undertow.builder()
+	                        .addHttpListener(8888, "localhost")
+
+	        );
+
+	        logger.info("JAX-RS based micro-service running!");
 
 	}
 
