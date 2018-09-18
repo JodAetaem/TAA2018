@@ -12,6 +12,8 @@ import repository.IRegionDAO;
 import entity.Sportexterieur;
 import entity.Sportinterieur;
 import io.undertow.Undertow;
+import repository.ILieuDAO;
+import repository.IRegionDAO;
 import repository.ISportDAO;
 import repository.RegionDAO;
 import repository.SportDAO;

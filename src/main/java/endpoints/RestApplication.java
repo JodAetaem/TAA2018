@@ -4,10 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.ws.rs.core.Application;
-
 import io.swagger.jaxrs.config.BeanConfig;
 
+
 public class RestApplication extends Application {
+	
 
 	public RestApplication() {
 		BeanConfig bean = new BeanConfig();
