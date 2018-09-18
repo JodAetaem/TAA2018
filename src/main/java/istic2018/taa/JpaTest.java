@@ -5,6 +5,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
+
 import entity.Region;
 import entity.Sport;
 import repository.IRegionDAO;
@@ -54,6 +56,9 @@ public class JpaTest {
 		region.setName("Maregion");
 		IRegionDAO<Region, Long> regionDao = new RegionDAO(manager, Region.class);
 		regionDao.create(region);
+		
+        UndertowJaxrsServer ut = new UndertowJaxrsServer();
+
 	}
 
 }
