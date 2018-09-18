@@ -76,10 +76,14 @@
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>3.6.1.Final</version>
 		</dependency>
-
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-jaxrs</artifactId>
+			<version>1.5.0</version>
+		</dependency>
 	</dependencies>
-	
-		<build>
+
+	<build>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>

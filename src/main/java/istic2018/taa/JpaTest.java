@@ -66,14 +66,7 @@ public class JpaTest {
 		IRegionDAO<Region, Long> regionDao = new RegionDAO(manager, Region.class);
 		regionDao.create(region);
 		
-     
-		Lieu lieu = new Lieu();
-		LieuId lid = new LieuId();
-		lid.setCodePostal("35510");
-		lid.setLabelVille("Cessong");
-		lieu.setId(lid);
-		ILieuDAO<Lieu, LieuId> lieuDAO = new LieuDAO<Lieu, LieuId>(manager, Lieu.class);
-		lieuDAO.create(lieu);
+    
 		manager.close();
 		
 		   UndertowJaxrsServer ut = new UndertowJaxrsServer();
@@ -82,7 +75,7 @@ public class JpaTest {
 
 	        ut.start(
 	                Undertow.builder()
-	                        .addHttpListener(8888, "localhost")
+	                        .addHttpListener(3030, "localhost")
 
 	        );
 
