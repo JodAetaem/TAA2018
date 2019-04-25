@@ -4,7 +4,8 @@
 Master 2 ILa
 Septembre - Novembre 2019
 
-# PROJET FINAL : 
+Réalisé en binome avec Mathieu Deschamps
+# SOURCE DU PROJET FINAL (ce repo n'est pas a jour) : 
 ### Front
 https://github.com/MathieuDeschamps/GLI
 ### Back
